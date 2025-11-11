@@ -4,6 +4,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -50,6 +52,9 @@ public class MiniGUI {
         firstPartPanel.setLayout(new BoxLayout(firstPartPanel, BoxLayout.X_AXIS));
         canvas.add(firstPartPanel, BorderLayout.CENTER);
         firstPartPanel.add(write);
+
+        JTextField textField = new JTextField();
+        canvas.add(textField, BorderLayout.NORTH);
         
     }
 
