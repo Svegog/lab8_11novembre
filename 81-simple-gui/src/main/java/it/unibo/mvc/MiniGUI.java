@@ -41,21 +41,26 @@ public class MiniGUI {
         /*
          * Handlers
          */
+        final JPanel firstPartPanel = new JPanel();
+        final JTextField textField = new JTextField("No number generated");
+        textField.setEditable(false);
+
         write.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println(randomGenerator.nextInt());
+                int random = randomGenerator.nextInt();
+                System.out.println(random);
+                textField.setText(Integer.toString(random));
             }
+
         });
         
-        JPanel firstPartPanel = new JPanel();
         firstPartPanel.setLayout(new BoxLayout(firstPartPanel, BoxLayout.X_AXIS));
         canvas.add(firstPartPanel, BorderLayout.CENTER);
         firstPartPanel.add(write);
 
-        JTextField textField = new JTextField();
         canvas.add(textField, BorderLayout.NORTH);
-        
     }
 
     private void display() {
