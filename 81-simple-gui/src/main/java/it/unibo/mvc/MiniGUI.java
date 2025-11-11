@@ -1,5 +1,6 @@
 package it.unibo.mvc;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -44,6 +45,12 @@ public class MiniGUI {
                 System.out.println(randomGenerator.nextInt());
             }
         });
+        
+        JPanel firstPartPanel = new JPanel();
+        firstPartPanel.setLayout(new BoxLayout(firstPartPanel, BoxLayout.X_AXIS));
+        canvas.add(firstPartPanel, BorderLayout.CENTER);
+        firstPartPanel.add(write);
+        
     }
 
     private void display() {
@@ -74,6 +81,7 @@ public class MiniGUI {
          * OK, ready to pull the frame onscreen
          */
         frame.setVisible(true);
+
     }
 
     /**
