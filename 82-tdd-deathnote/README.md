@@ -9,7 +9,6 @@ Use the *Test-Driven Development (TDD)* methodology to develop the following.
       * check that the exceptions are thrown correctly, that their type is the expected one, and that the message is not null, empty, or blank.
    2. No rule is empty or null in the DeathNote rules.
       * for all the valid rules, check that none is null or blank
-      
    3. The human whose name is written in the DeathNote will eventually die.
       * verify that the human has not been written in the notebook yet
       * write the human in the notebook
@@ -20,9 +19,9 @@ Use the *Test-Driven Development (TDD)* methodology to develop the following.
    If the cause of death is not specified, the person will simply die of a heart attack.
       * check that writing a cause of death before writing a name throws the correct exception
       * write the name of a human in the notebook
-      * verify that the cause of death is a heart attack
-      * write the name of another human in the notebook
-      * set the cause of death to "karting accident"
+      * verify that the cause of death is a heart attack 
+      * write the name of another human in the notebook - 
+      * set the cause of death to "karting accident" 
       * verify that the cause of death has been set correctly (returned true, and the cause is indeed "karting accident")
       * sleep for 100ms
       * try to change the cause of death 
@@ -30,13 +29,14 @@ Use the *Test-Driven Development (TDD)* methodology to develop the following.
    5. After writing the cause of death, details of the death should be written in the next 6 seconds and 40 milliseconds of writing the death's cause.
       * check that writing the death details before writing a name throws the correct exception
       * write the name of a human in the notebook
-      * verify that the details of the death are currently empty
+      * verify that the details of the death are currently empty -
       * set the details of the death to "ran for too long"
       * verify that death details have been set correctly (returned true, and the details are indeed "ran for too long")
       * write the name of another human in the notebook
       * sleep for 6100ms
       * try to change the details
       * verify that the details have not been changed
+
 4. Ask for a correction of the tests
 5. Verify that all tests fail
 6. Modify the implementation of the `DeathNote` in such a way that all tests work

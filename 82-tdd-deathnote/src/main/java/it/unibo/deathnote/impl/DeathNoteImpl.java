@@ -8,8 +8,6 @@ import it.unibo.deathnote.api.DeathNote;
 
 public class DeathNoteImpl implements DeathNote {
 
-    private Map<String,DeathNoteImplElement> deathNoteContent;
-    private Set<String> nameWritten = new HashSet<>();
 
     @Override
     public String getRule(int ruleNumber) {
@@ -23,12 +21,12 @@ public class DeathNoteImpl implements DeathNote {
 
     @Override
     public boolean writeDeathCause(String cause) {
-        throw new UnsupportedOperationException("Unimplemented method 'writeDeathCause'");
+        throw new IllegalStateException("Unimplemented method 'writeDeathCause'");
     }
 
     @Override
     public boolean writeDetails(String details) {
-        throw new UnsupportedOperationException("Unimplemented method 'writeDetails'");
+        throw new IllegalStateException("Unimplemented method 'writeDetails'");
     }
 
     @Override
@@ -44,33 +42,6 @@ public class DeathNoteImpl implements DeathNote {
     @Override
     public boolean isNameWritten(String name) {
         throw new UnsupportedOperationException("Unimplemented method 'isNameWritten'");
-    }
-
-    private class DeathNoteImplElement {
-        private final String cause;
-        private String detail;
-
-        public DeathNoteImplElement(String cause, String detail) {
-            this.cause = cause;
-            this.detail = detail;
-        }
-
-        public DeathNoteImplElement(String cause) {
-            this(cause,null);
-        }
-
-        public DeathNoteImplElement() {
-            this("Heart Attack", null);
-        }
-
-        public String getCause() {
-            return this.cause;
-        }
-
-        public String getDetai() {
-            return this.detail;
-        }
-
     }
     
 }
