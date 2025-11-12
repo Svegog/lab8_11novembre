@@ -46,16 +46,13 @@ public class MiniGUI {
         textField.setEditable(false);
 
         write.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(final ActionEvent e) {
-                int random = randomGenerator.nextInt();
-                System.out.println(random);
+                final int random = randomGenerator.nextInt();
+                System.out.println(random); //NOPMD
                 textField.setText(Integer.toString(random));
             }
-
         });
-        
         firstPartPanel.setLayout(new BoxLayout(firstPartPanel, BoxLayout.X_AXIS));
         canvas.add(firstPartPanel, BorderLayout.CENTER);
         firstPartPanel.add(write);
