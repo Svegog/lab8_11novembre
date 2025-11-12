@@ -9,6 +9,7 @@ Use the *Test-Driven Development (TDD)* methodology to develop the following.
       * check that the exceptions are thrown correctly, that their type is the expected one, and that the message is not null, empty, or blank.
    2. No rule is empty or null in the DeathNote rules.
       * for all the valid rules, check that none is null or blank
+      
    3. The human whose name is written in the DeathNote will eventually die.
       * verify that the human has not been written in the notebook yet
       * write the human in the notebook
