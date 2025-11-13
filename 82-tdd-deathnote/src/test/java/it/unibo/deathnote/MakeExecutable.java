@@ -5,6 +5,7 @@ import org.junit.jupiter.api.function.Executable;
 import it.unibo.deathnote.api.DeathNote;
 
 public class MakeExecutable {
+    
     public static Executable makeExecutableForRule(final DeathNote book, final int index) {
         return new Executable() {
             @Override

@@ -7,13 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.function.Executable;
-
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -36,18 +29,17 @@ class TestDeathNote {
 
     @Test
     void testWrongRuleInput() {
-        int index = 0;
-        while (index > -2) {
-            var exception = assertThrows(IllegalArgumentException.class, MakeExecutable.makeExecutableForRule(bookOfDeath, index--));
-            assertNotNull(exception.getMessage());
-            assertFalse(exception.getMessage().isEmpty());
+        int[] illegal = new int[] {-1,0,DeathNote.RULES.size()+1};
+        for (int i : illegal) {
+            assertThrows(IllegalArgumentException.class ,MakeExecutable.makeExecutableForRule(bookOfDeath, i));
         }
-        assertThrows(IllegalArgumentException.class, MakeExecutable.makeExecutableForRule(bookOfDeath, (DeathNote.RULES.size() + 1)));  
     }
 
     @Test 
     void testRuleContent() {
-        for (String rule : DeathNote.RULES) {
+        String rule;
+        for (int i = 1; i <= DeathNote.RULES.size(); i++) {
+            rule = bookOfDeath.getRule(i);
             assertNotNull(rule);
             assertFalse(rule.isEmpty());
         }
