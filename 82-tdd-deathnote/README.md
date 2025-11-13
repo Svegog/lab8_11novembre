@@ -15,6 +15,7 @@ Use the *Test-Driven Development (TDD)* methodology to develop the following.
       * verify that the human has been written in the notebook
       * verify that another human has not been written in the notebook
       * verify that the empty string has not been written in the notebook
+      
    4. If the cause of death is written within the next 40 milliseconds of writing the person's name, it will happen.
    If the cause of death is not specified, the person will simply die of a heart attack.
       * check that writing a cause of death before writing a name throws the correct exception

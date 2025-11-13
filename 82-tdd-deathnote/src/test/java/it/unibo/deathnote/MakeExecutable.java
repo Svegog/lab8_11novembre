@@ -58,7 +58,7 @@ final class MakeExecutable {
         return new Executable() {
             @Override
             public void execute() throws Throwable {
-                book.getDeathCause(cause);
+                book.writeDeathCause(cause);
             }
         };
     }

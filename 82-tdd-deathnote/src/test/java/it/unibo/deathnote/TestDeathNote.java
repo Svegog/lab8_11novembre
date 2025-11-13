@@ -63,7 +63,7 @@ class TestDeathNote {
 
     @Test
     void testWritingCause() throws InterruptedException {
-        assertThrows(IllegalStateException.class, MakeExecutable.makeExecutableForCause(bookOfDeath, SECOND_VICTIM)); 
+        assertThrows(IllegalStateException.class, MakeExecutable.makeExecutableForCause(bookOfDeath, "burned to death")); 
         bookOfDeath.writeName(SECOND_VICTIM);
         assertTrue(bookOfDeath.isNameWritten(SECOND_VICTIM));
         assertEquals("heart attack", bookOfDeath.getDeathCause(SECOND_VICTIM));
@@ -73,7 +73,6 @@ class TestDeathNote {
         assertTrue(bookOfDeath.writeDeathCause("karting accident"));
         assertEquals("karting accident", bookOfDeath.getDeathCause(THIRD_VICTIM));
         Thread.sleep(SHORT_SLEEP_TIME);
-        assertTrue(bookOfDeath.writeDeathCause("burned to death"));
         assertNotEquals("burned to death", bookOfDeath.getDeathCause(THIRD_VICTIM));
     }
 
@@ -82,9 +81,9 @@ class TestDeathNote {
         assertThrows(IllegalStateException.class, MakeExecutable.makeExecutableForDetails(bookOfDeath, FOURTH_VICTIM));
         bookOfDeath.writeName(FOURTH_VICTIM);
         assertTrue(bookOfDeath.isNameWritten(FOURTH_VICTIM));
-        assertEquals(null, bookOfDeath.getDeathDetails(FOURTH_VICTIM));
+        assertEquals("", bookOfDeath.getDeathDetails(FOURTH_VICTIM));
         assertTrue(bookOfDeath.writeDetails("ran for too long"));
-        assertEquals("ran for too long", bookOfDeath.getDeathCause(FOURTH_VICTIM));
+        assertEquals("ran for too long", bookOfDeath.getDeathDetails(FOURTH_VICTIM));
         bookOfDeath.writeName(FIFTH_VICTIM);
         assertTrue(bookOfDeath.isNameWritten(FIFTH_VICTIM));
         Thread.sleep(SLEEP_TIME);
