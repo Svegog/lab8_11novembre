@@ -5,6 +5,7 @@ import it.unibo.mvc.api.DrawNumberController;
 import it.unibo.mvc.api.DrawNumberView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Objects;
 public final class DrawNumberControllerImpl implements DrawNumberController {
 
     private final DrawNumber model;
-    private final ArrayList<DrawNumberView> viewsList = new ArrayList<>();
+    private final List<DrawNumberView> viewsList = new ArrayList<>();
 
     /**
      * Builds a new game controller provided a game model.
@@ -35,7 +36,7 @@ public final class DrawNumberControllerImpl implements DrawNumberController {
 
     @Override
     public void newAttempt(final int n) {
-        for (DrawNumberView view : viewsList) {
+        for (final DrawNumberView view : viewsList) {
             Objects.requireNonNull(view, "There is no view attached!").result(model.attempt(n));
         }
     }
